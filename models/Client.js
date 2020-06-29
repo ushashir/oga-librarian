@@ -1,13 +1,23 @@
 const mongoose = require('mongoose');
 
-const ClientSchema = mongoose.Schema({
+const ClientSchema = mongoose.Schema ({
     admin: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'clients'
     },
     regNo: {
         type: Number,
-        required: true
+        required: true,
+        unique: true
+    },
+    password: {
+        type: Number,
+        required: true,
+        unique: true
+    },
+    category: {
+        type: String,
+        default: 'OTHERS'
     },
     firstName: {
         type: String,
@@ -15,16 +25,17 @@ const ClientSchema = mongoose.Schema({
     },
     lastName: {
         type: String,
-        required: true
     },
     phoneNo: {
         type: Number,
-        required: true
     },
     email: {
         type: String,
     },
-    address: {
+    homeAddress: {
+        type: String,
+    },
+    officeAddress: {
         type: String,
     },
     gender: {
@@ -33,10 +44,6 @@ const ClientSchema = mongoose.Schema({
     },
     occupation: {
         type: String,
-    },
-    student: {
-        type: String,
-        default: 'No'
     },
     institution: {
         type: String,
@@ -50,14 +57,10 @@ const ClientSchema = mongoose.Schema({
     level: {
         type: String,
     },
-    subscriptionStatus: {
+    subStatus: {
         type: String,
         default: 'OFF'
     },
-    regAs: {
-        type: String,
-        default: 'OTHERS'
-    }, 
     date: {
         type: Date,
         default: Date.now

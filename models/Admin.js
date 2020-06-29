@@ -1,32 +1,33 @@
 const mongoose = require('mongoose');
 
 const AdminSchema = mongoose.Schema ({
-    
-    firstName: {
+    userName: {
         type: String,
         required: true
-    },
-    lastName: {
-        type: String,
-        required: true
-    },
-    position: {
-        type: String,
-        required: true
-    },
-    phoneNo: {
-        type: String,
-        required: true
-    },
-    email: {
-        type: String,
-        required: true,
-        unique: true
     },
     password: {
         type: String,
         required: true
     },
+    branch: {
+        type: String,
+    },
+    firstName: {
+        type: String,
+    },
+    lastName: {
+        type: String,
+    },
+    position: {
+        type: String,
+    },
+    phoneNo: {
+        type: String,
+    },
+    email: {
+        type: String,
+    },
+    
     date: {
         type: Date,
         default: Date.now
