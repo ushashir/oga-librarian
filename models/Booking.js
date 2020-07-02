@@ -1,38 +1,40 @@
 const mongoose = require('mongoose');
 
-const BookingSchema = mongoose.Schema ({
-    
-    firstName: {
-        type: String,
-        required: true
+const BookingSchema = mongoose.Schema({
+    admin: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'bookings'
     },
-    lastName: {
-        type: String,
-    },
-    organisation: {
-        type: String,
-    },
-    phoneNo: {
+    name: {
         type: String,
         required: true
     },
     email: {
         type: String,
-        required: true,
+        required: true
     },
-    event: {
+    phoneNo: {
         type: String,
         required: true
     },
-    details: {
+    organisation: {
+        type: String,
+    },
+    eventTitle: {
         type: String,
         required: true
     },
+    eventDate: {
+        type: String,
+        required: true
+    },
+    discription: {
+        type: String,
+    }, 
     date: {
         type: Date,
         default: Date.now
-    }
-})
+    },
+});
 
 module.exports = mongoose.model('bookings', BookingSchema);
-

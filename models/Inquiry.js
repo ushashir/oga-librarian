@@ -1,16 +1,13 @@
 const mongoose = require('mongoose');
 
 const EnquirySchema = mongoose.Schema({
-   
-    firstName: {
-        type: Number,
-        required: true
+    admin: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'inquiries'
     },
-    lastName: {
+    name: {
         type: String,
-    },
-    phoneNo: {
-        type: Number,
+        required: true
     },
     email: {
         type: String,

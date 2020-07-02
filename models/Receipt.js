@@ -6,23 +6,17 @@ const ReceiptSchema = mongoose.Schema ({
         type: Date,
         default: Date.now
     },
-    firstName: {
+    name: {
         type: String,
         required: true
     },
-    lastName: {
-        type: String,
-    },
-    amountWords: {
-        type: String,
-    },
     amount: {
-        type: String,
+        type: Number,
         required: true,
     },
-    for: {
+    paidFor: {
         type: String,
-        required: true,
+        default: "Library services"
     }
 })
 

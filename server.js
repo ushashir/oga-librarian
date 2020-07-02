@@ -2,14 +2,13 @@ const express =  require('express');
 const connectDB = require('./config/db');
 
 // api routes
-const admin = require('./routes/adminReg');
-const adminAuth = require('./routes/adminAuth');
-const client = require('./routes/client');
+const admin = require('./routes/admins');
+const clients = require('./routes/clients');
 const clientAuth = require('./routes/clientAuth');
-// const receipt = require('./routes/receipts');
-// const askLibrarian = require('./routes/askLibrarian');
-// const booking = require('./routes/bookings');
-// const inquiry = require('./routes/inquiries');
+const adminAuth = require('./routes/adminAuth');
+const receipt = require('./routes/receipts');
+const booking = require('./routes/bookings');
+const inquiry = require('./routes/inquiries');
 
 const app = express();
 
@@ -24,12 +23,11 @@ app.get('/', (req, res) => res.json ({ msg: 'Welcome to Oga librarian app'}));
 // remote api's
 app.use('/api/admins', admin);
 app.use('/api/adminAuth', adminAuth);
-app.use('/clients', client);
+app.use('/api/clients', clients);
 app.use('/api/clientAuth', clientAuth);
-// app.use('/api/askLibrarian', askLibrarian);
-// app.use('/api/bookings', booking);
-// app.use('/api/receipts', receipt);
-// app.use('/api/inquiries', inquiry);
+app.use('/api/bookings', booking);
+app.use('/api/receipts', receipt);
+app.use('/api/inquiries', inquiry);
 
 const PORT = process.env.PORT || 5000;
 

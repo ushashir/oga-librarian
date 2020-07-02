@@ -26,7 +26,7 @@ router.post('/',  [
         let admin = await Admin.findOne( { userName });
 
         if (admin) {
-            return res.status(400).json({ msg: 'Registration rejected. contact 08165593275'})
+            return res.status(400).json({ msg: 'Registration rejected: Admin already exist'})
         }
         
         admin = new Admin ({

@@ -3,15 +3,15 @@ const mongoose = require('mongoose');
 const ClientSchema = mongoose.Schema ({
     admin: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'clients'
+        ref: 'inquiries'
     },
     regNo: {
-        type: Number,
+        type: String,
         required: true,
         unique: true
     },
     password: {
-        type: Number,
+        type: String,
         required: true,
         unique: true
     },
@@ -40,7 +40,6 @@ const ClientSchema = mongoose.Schema ({
     },
     gender: {
         type: String,
-        default: ''
     },
     occupation: {
         type: String,
@@ -67,4 +66,4 @@ const ClientSchema = mongoose.Schema ({
     },
 });
 
-module.exports = mongoose.model('client', ClientSchema);
+module.exports = mongoose.model('clients', ClientSchema);

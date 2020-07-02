@@ -5,6 +5,7 @@ const jwt = require('jsonwebtoken');
 const config = require('config');
 const auth = require('../middleware/adminAuth')
 const { check, validationResult } = require('express-validator');
+
 const Admin = require('../models/Admin');
 
 // @route   GET api/adminAuth
